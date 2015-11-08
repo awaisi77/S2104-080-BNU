@@ -1,0 +1,397 @@
+#include<iostream>
+#include<string>
+#include<stdio.h>
+using namespace std;
+class Item
+{
+private:
+	int itemId;
+	string itemName;
+	int itemPrice;
+	string itemDescription;
+	string createdAt;
+	string updatedAt;
+	string itemType;
+
+public:
+	//defacult constructor
+
+	Item()
+	{
+		itemId = 0;
+		itemName = "";
+		itemPrice = 0;
+		itemDescription = "";
+		createdAt = "";
+		updatedAt = "";
+		itemType = "";
+	
+	}
+
+	//overloaded Constructor
+	Item(int id,string name,int price,string description,string created,string updated,string type)
+	{
+	
+		setItemId(id);
+		setItemName(name);
+		setItemPrice(price);
+		setItemDescription(description);
+		setCreatedAt(created);
+		setUpdatedAt(updated);
+		setItemType(type);
+	
+	}
+
+	//setters Functions
+
+	void setItemId(int id)
+	{
+		itemId = id;
+	}
+
+	void setItemName(string name)
+	{
+		itemName = name;
+	}
+
+	void setItemPrice(int price)
+	{
+		itemPrice = price;
+	}
+
+	void setItemDescription(string description)
+	{
+		itemDescription = description;
+	}
+
+	void setCreatedAt(string created)
+	{
+		createdAt = created;
+	}
+
+	void setUpdatedAt(string updated)
+	{
+		updatedAt = updated;
+	}
+
+	void setItemType(string type)
+	{
+		itemType = type;
+	}
+
+	//getter functions
+	int getItemId()
+	{
+		return itemId;
+	}
+
+	string getItemName()
+	{
+		return itemName;
+	}
+
+	int getItemPrice()
+	{
+		return itemPrice;
+	}
+
+	string getItemDescription()
+	{
+		return itemDescription;
+	}
+
+	string getCreatedAt()
+	{
+		return createdAt;
+	}
+
+	string getUpdatedAt()
+	{
+		return updatedAt;
+	}
+
+	string getItemType()
+	{
+		return itemType;
+	}
+
+	void display()
+	{
+		cout << "Item" << endl;
+		cout << "Item Id : " << getItemId() << endl;
+		cout << "Item Name : " << getItemName() << endl;
+		cout << "Item Price : " << getItemPrice() << endl;
+		cout << "Item Description : " << getItemDescription();
+		cout << "Item Created  : " << getCreatedAt() << endl;
+		cout << "Item Updated : " << getUpdatedAt() << endl;
+		cout << "Item Type : " << getItemType() << endl;
+	}
+
+
+
+
+};
+
+class Order
+{
+private:
+	int orderId;
+	string orderDescription;
+	string createdAt;
+	string updatedAt;
+	string UserName;
+	string pickUpTime;
+	string pickUpFrom;
+	string deliveryTime;
+	string deliveryTo;
+	bool status;
+public:
+
+	Order()
+	{
+		orderId = 0;
+		orderDescription = "";
+		createdAt = "";
+		updatedAt = "";
+		UserName = "";
+		pickUpTime = "";
+		pickUpFrom = "";
+		deliveryTime = "";
+		deliveryTo = "";
+		status = 0;
+	}
+
+	//overloaded constructor
+
+	Order(int id, string desc, string create, string update, string user, string pickTime, string pickFrom, string deliverTime, string deliverTo, bool state)
+	{
+		setOrderId(id);
+		setOrderDescription(desc);
+		setCreatedAt(create);
+		setUpdatedAt(update);
+		setUserName(user);
+		setPickUpTime(pickTime);
+		setPickUpFrom(pickFrom);
+		setDeliveryTime(deliverTime);
+		setDeliveryTo(deliverTo);
+		setStatus(state);
+		
+	
+	}
+
+
+
+
+	//getter functions
+
+	void setOrderId(int id)
+	{
+		orderId = id;
+	}
+
+	void setUserName(string name)
+	{
+		UserName = name;
+	}
+
+	void setOrderDescription(string description)
+	{
+		orderDescription = description;
+	}
+
+	void setCreatedAt(string created)
+	{
+		createdAt = created;
+	}
+
+	void setUpdatedAt(string updated)
+	{
+		updatedAt = updated;
+	}
+
+	void setPickUpTime(string pickTime)
+	{
+		pickUpTime = pickTime;
+	}
+
+	void setPickUpFrom(string pickFrom)
+	{
+		pickUpFrom = pickFrom;
+	}
+
+	void setDeliveryTime(string deliverTime)
+	{
+		deliveryTime = deliverTime;
+	}
+
+	void setDeliveryTo(string deliverTo)
+	{
+		deliveryTo = deliverTo;
+	}
+
+	void setStatus(bool state)
+	{
+		status = state;
+	}
+
+	//getter functions
+
+	int getOrderId()
+	{
+		return orderId;
+	}
+
+	string getUserName()
+	{
+		return UserName;
+	}
+
+	string getOrderDescription()
+	{
+		return orderDescription;
+	}
+
+	string getCreatedAt()
+	{
+		return createdAt;
+	}
+
+	string getUpdatedAt()
+	{
+		return updatedAt;
+	}
+
+	string getPickUpTime()
+	{
+		return pickUpTime;
+	}
+
+	string getPickUpFrom()
+	{
+		return pickUpFrom;
+	}
+
+	string getDeliveryTime()
+	{
+		return deliveryTime ;
+	}
+
+	string getDeliveryTo()
+	{
+		return deliveryTo;
+	}
+
+	bool getStatus()
+	{
+		return status;
+	}
+
+	//display
+	void display()
+	{
+		cout << "Order" << endl;
+		cout << "Order Id : " << getOrderId() << endl;
+		cout << "Order User Name : " << getUserName() << endl;
+		cout << "Order Description : " << getOrderDescription()<< endl;
+		cout << "Order created : " <<getCreatedAt()<< endl;
+		cout << "Order Updated : " << getUpdatedAt()<< endl;
+		cout << "Order Pick Up Time : " << getPickUpTime() << endl;
+		cout << "Order Pick Up From : " << getPickUpFrom() << endl;
+		cout << "Order Delivery Time : "<<getDeliveryTime() << endl;
+		cout << "Order Delivery TO : " << getDeliveryTo() << endl;
+		cout << "Order Status  : " << getStatus() << endl;
+	}
+
+};
+
+class OrderDetails :public Item,public Order
+{
+public:
+	OrderDetails()
+	{
+		OrderDetailId = 0;
+		Quantity = 0;
+	}
+
+	OrderDetails(int id,int quan,int item_Id,int order_Id)
+	{
+		setOrderDetailId(id);
+		setQuantity(quan);
+		setItemId(item_Id);
+		setOrderId(order_Id);
+	
+	}
+
+	void setOrderDetailId(int id)
+	{
+		OrderDetailId = id;
+	}
+
+	void setQuantity(int quan)
+	{
+		Quantity = quan;
+	}
+
+	int getOrderDetailId()
+	{
+		return	OrderDetailId;
+	}
+
+	int getQuantity()
+	{
+		return Quantity;
+	}
+
+	void display()
+	{
+		cout << "Order Detail Id : " << getOrderDetailId() << endl;
+		cout << "Order ID :  " << getOrderId() << endl;
+		cout << "Item Id : " << getItemId() << endl;
+		cout << "Order Quantity : " << getQuantity() << endl;
+
+	
+	}
+private:
+	int OrderDetailId;
+	int Quantity;
+};
+
+int main()
+{	
+	Item i1(1, "Pen", 100, "This is a Ink pen", "May 2014", "May2015", "Stationary");
+	Item i2(2, "Clock", 700, "This is a Clock", "june 2013", "May2015", "House holds");
+	Item i3(3, "Mobile", 9000, "This is a SmartPhone", "May 2014", "Feb 2015", "Electronics");
+	Item i4(4, "Laptop", 50000, "This is a Laptop", "May 2014", "May2015", "Electronics");
+	Item i5(5, "Tv", 20000, "This is a Tv", "May 2014", "Agust 2015", "Electronics");
+	Item i6(6, "Pen", 100, "This is a Ink pen", "May 2014", "May2015", "Stationary");
+	Item i7(7, "Marker", 10, "This is a Marker", "May 2014", "May2015", "Stationary");
+	Item i8(8, "Register", 50, "This is a Register", "May 2014", "May2015", "Stationary");
+	Item i9(9, "Calculator", 1900, "This is a Calculator", "May 2014", "May2015", "Stationary");
+	Item i10(10, "Cap", 100, "This is a Cap", "May 2014", "May2015", "cloth");
+	Item i11(11, "Jacket", 4000, "This is a Jacket", "May 2014", "May2015", "Cloth");
+	Item i12(12, "Shirt", 1500, "This is a Shirt", "May 2014", "May2015", "Cloth");
+	Item i13(13, "Trousers", 1000, "This is a Trousers", "May 2014", "May2015", "Clothe");
+	Item i14(14, "Car", 900000, "This is a Car", "May 2014", "May2015", "Vehicle");
+	Item i15(15, "Bike", 100000, "This is a Bike", "April 2014", "May2015", "Vehicle");
+	Item i16(16, "Cycle", 10000, "This is a  Cycle", "May 2014", "May2015", "Vehicle");
+	Item i17(17, "Fan", 100, "This is a Fan", "May 2014", "May2015", "Electronics");
+	Item i18(18, "Ac", 16000, "This is a Ac", "May 2014", "March 2015", "Electronics");
+	Item i19(19, "Fridge", 70000, "This is a Fridge", "May 2014", "May2015", "Electronics");
+	Item i20(20, "Pencil", 10, "This is a  pencil", "May 2014", "May2015", "Stationary");
+	cout << "--------------------------------------------------------------------------" << endl;
+
+	Order o1(1, "This is a stationary Order", "11,May 2014", "11,May 2015", "Asim", "7:00am", "Lahore", "10:00pm", "Muree", 1);
+	Order o2(2, "This is a Electronics Order", "11,May 2014", "11,May 2015", "Amir", "11:00pm", "Lahore", "10:00pm", "Rawalpindi", 1);
+	Order o3(3, "This is a Vehicle Order", "11,May 2013", "11,May 2015", "Anum", "6:00pm", "Lahore", "10:00am", "Sargodha", 1);
+	Order o4(4, "This is a stationary Order", "10,March 2014", "11,May 2015", "Awais", "7:00pm", "Lahore", "10:00pm", "Sargodha", 1);
+	Order o5(5, "This is a Clothing Order", "19,May 2014", "11,May 2015", "ALi", "9:00am", "Lahore", "10:00pm", "islamabad", 1);
+
+	cout << "--------------------------------------------------------------------------" << endl;
+	OrderDetails d1(1,5,1,1);
+	OrderDetails d1(2, 50, 2, 2);
+	OrderDetails d1(3, 10, 3, 3);
+	OrderDetails d1(4, 150, 4, 4);
+	OrderDetails d1(5, 40, 5, 5);
+
+	return 0;
+}
